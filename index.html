@@ -465,23 +465,6 @@
                                     <input type="submit" class="btn btn-success btn-send main-btn center-block disabled"
                                             value="Send message">
                                 </div>
-                                <div id="thank_you" style="display: none;">
-                                    <p>Thanks for filling up the form!</p>
-                                    <button type="submit">Close</button>
-                                </div>
-                                <script>
-                                    var submit = document.querySelector('#submit');
-                                  
-                                    submit.addEventListener('click', function (e) {
-                                    e.preventDefault();
-                                    // Hide first view
-                                    document.getElementByClass('col-md-12').style.display = 'none';
-                                
-                                    // Show thank you message element
-                                    document.getElementById('thank_you').style.display = 'block';
-                                    });
-                                </script>
-
                             </div>
                         </div>
 

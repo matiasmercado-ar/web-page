@@ -8,12 +8,17 @@ if($_POST) {
     $phone = $_POST['phone'];
     $message = $_POST['message'];
     $space = " ";
-    $formcontent=" From: $name $space $lastname \n Phone: $phone \n Message: $message";
+    //Form of the mail Im gonna recive
+    $formcontent=" De: $name $space $lastname \n Teléfono: $phone \n\nMensaje: $message";
     $recipient = "matias@matiasmercado.ar";
     $recipient2 = "tecmm7@gmail.com";
-    $subject = "Contacto desde mi pagina web";
-    $mailheader = "From: $email \r\n";
-    
+    $subject = "Mail de: matiasmercado.com";
+    //Complete header for utf8.
+    $mailheader = 'From: '.$email."\r\n".
+                  'Content-Type: text/plain; charset=UTF-8' . "\r\n" .
+                  'Para: WebSite'  .  "\r\n" .
+                  'X-Mailer: PHP/' . phpversion();
+
     mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
     mail($recipient2, $subject, $formcontent, $mailheader) or die("Error!");
     
